@@ -10,25 +10,7 @@ void psums_seq(int *x,int *s,int n){
 // (1) Prefix Sum recursivo
 void psums_rec(int *x,int *s,int n, int nt){
 	int blocksize = n/nt;
-	int valor = 0;
-	#pragma omp reduction(+:valor)
-	{
-		if(n<2){
-			s[0] = 1;
-		}else{
-			for(int j = 1; j < n ; ++j){
-				for (int i = 0; i < n; i++)
-				{
-					/* code */
-					valor += x[i];
-				}
-				s[j] = valor;
-				valor = 0;
-				psums_rec(x,s,n-1,nt);
-			} 
-				 
-		}
-	}
+	printf("FALTA ESTO");
 }
 
 // (2) Prefix Sum iterativo
