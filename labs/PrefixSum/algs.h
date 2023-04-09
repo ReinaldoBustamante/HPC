@@ -45,7 +45,7 @@ void psums_it(int *x,int *s,int n, int nt){
 			suma += x[i];
 		}
 		s[segment] = suma; // s[] = [1,0,0,0,15,0,0,0]
-		printf("Hilo: %i trabajara en el segmento de inicio, %i, cuyo valor es %i\n\n",tid,segment,suma);
+		//printf("Hilo: %i trabajara en el segmento de inicio, %i, cuyo valor es %i\n\n",tid,segment,suma);
 		#pragma omp barrier
 		//Fase 2 ---- Realizar prefixSum para cada bloque
 		for(int i = segment ; i<segment+blocksize ; i++){
