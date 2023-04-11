@@ -50,7 +50,8 @@ int main(int argc, char **argv){
 	    psums_it(x,s,n,nt);
     }
 	t2=omp_get_wtime();
-    printf("done (Parallel): %f secs\n",(t2-t1));
+	float timePar=t2-t1;
+    printf("done (Parallel): %f secs\n",(timePar));
 	printarray(s,n,"s: ");
 
 
@@ -63,16 +64,23 @@ int main(int argc, char **argv){
     psums_seq(x, sgold, n);
 	t2=omp_get_wtime();
     printf("done: ");
-	printf("%f secs\n",(t2-t1));
+	float timeSeq=t2-t1;
+	printf("%f secs\n",(timeSeq));
 	printarray(sgold,n,"s: ");
     printf("\nValidating............................."); fflush(stdout);
-
-
-
 
 
     // (4) VALIDATE PARALLEL RESULT WITH GOLD
     validate(s, sgold, n);
     printf("pass\n");
+	printf("\n Speedup.............................."); fflush(stdout);
+	float speedup=timeSeq/timePar;
+	printf("Value: %f \n", speedup);
+
+	printf("\n Eficiency............................."); fflush(stdout);
+	float efficiency=timeSeq/nt*timePar;
+	printf("Value: %f \n", efficiency);
+
+
 	return 0;
 }

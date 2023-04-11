@@ -6,8 +6,8 @@ alg = 0 -> recursivo,  1 -> iterativo
 nt = numero de threads ( lo usara en ejercicio 2) )
 
 
-2) Identifique donde puede acelerar el calculo de prefix sums usando computacion paralela.
-Disene una estrategia de ejecucion paralela.
+    2) Identifique donde puede acelerar el calculo de prefix sums usando computacion paralela.
+    Disene una estrategia de ejecucion paralela.
 
 
 3) Implementar diseno de paralelizacion. Puede elegir CPU (OpenMP) o bien GPU (CUDA).
